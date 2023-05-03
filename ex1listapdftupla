@@ -1,0 +1,24 @@
+'''
+Crie uma lista com os nomes dos super-heróis que devem participar da Iniciativa
+Vingadores seguindo a ordem:
+▪ Homem de Ferro
+▪ Capitão América
+▪ Thor
+▪ Hulk
+▪ Viúva Negra
+▪ Gavião Arqueiro
+Com essa lista, execute as seguintes operações:
+a) inclua o Homem-Aranha no final da lista;
+b) infelizmente a Viúva Negra e o Homem de Ferro não fazem mais
+parte da Iniciativa Vingadores, então retire-os da lista.
+'''
+
+herois = ['Homem de Ferro', 'Capitão América', 'Thor', 'Viuva Negra', 'Gavião Arqueiro']
+
+herois.insert(5,'Homem-Aranha')
+
+herois.remove('Homem de Ferro')
+herois.remove('Viuva Negra')
+
+
+print(herois)

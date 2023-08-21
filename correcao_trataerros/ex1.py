@@ -1,0 +1,61 @@
+lista_funcionarios = []
+resp = 1
+
+while (resp != 0):
+    print("1 - Inserção do funcionário")
+    print("2 - Alteração do funcionário")
+    print("3 - Exclusão do funcionário")
+    print("4 - Exibição dos funcionários")
+    opc = int(input("Digite a opção desejada (1-4): "))
+
+    if (opc == 1):
+        try:
+            cod = int(input("Digite o código: "))
+            nome = input("Digite o nome: ")
+            idade = int(input("Digite a idade: "))
+            salario = float(input("Digite o salário: "))
+        except ValueError:
+            print("Digite um valor numérico")
+        else: 
+            func = {'Codigo':cod, 'Nome':nome, 'Idade':idade, 'Salario':salario}
+            lista_funcionarios.append(func)
+        finally:
+            print("Operação finalizada")
+    elif (opc == 2):
+        cod = int(input("Digite o código do funcionário que deseja alterar: "))
+        pos = -1
+        for i in range(len(lista_funcionarios)):
+            if (cod == lista_funcionarios[i]['Código']):
+                pos = i
+        if (pos != -1): #Encontrou o código a ser alterado
+            try:
+                cod = int(input("Digite o código: "))
+                nome = input("Digite o nome: ")
+                idade = int(input("Digite a idade: "))
+                salario = float(input("Digite o salário: "))
+            except ValueError:
+                print("Digite um valor numérico")
+            else: 
+                lista_funcionarios[pos]['Nome'] = nome
+                lista_funcionarios[pos]['Idade'] = idade
+                lista_funcionarios[pos]['Salario'] = salario
+                
+            finally:
+                print("Operação finalizada")
+        else:
+            print("Código não encontrado")        
+    elif (opc == 3):
+        cod = int(input("Digite o código do funcionário que deseja alterar: "))
+        pos = -1
+        for i in range(len(lista_funcionarios)):
+            if (cod == lista_funcionarios[i]['Código']):
+                pos = i
+        if (pos != -1): #Encontrou o código a ser excluído
+            lista_funcionarios.pop(pos)
+            print("Exclusão realizada com sucesso!")
+        else:
+            print("Código não encontrado")
+    elif (opc == 4):
+        print(lista_funcionarios)
+
+    resp = int(input("Deseja continuar (1-SIM / 0-NÃO)? ")            
